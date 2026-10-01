@@ -241,6 +241,13 @@ pipeline {
 
                     echo "Synchronizing files..."
 
+                    # Old deploys may contain read-only files (e.g. a manually
+                    # placed 444 .env.production). Make everything writable and
+                    # clear ALL old contents including dotfiles, otherwise cp
+                    # cannot overwrite them (Permission denied).
+                    chmod -R u+w "${DEPLOY_PATH}" 2>/dev/null || true
+                    find "${DEPLOY_PATH}" -mindepth 1 -delete 2>/dev/null || true
+
                     if command -v rsync >/dev/null 2>&1; then
                         echo "Using:"
                         rsync --version | head -1
@@ -255,8 +262,7 @@ pipeline {
                     else
                         echo "WARNING: rsync not found, falling back to cp."
                         mkdir -p "${DEPLOY_PATH}"
-                        # rm old files to mimic --delete, then copy
-                        rm -rf "${DEPLOY_PATH:?}/"*
+                        # Old contents already cleared above (incl. dotfiles).
                         cp -a .next/standalone/. "${DEPLOY_PATH}/"
                         mkdir -p "${DEPLOY_PATH}/.next/static" "${DEPLOY_PATH}/public"
                         cp -a .next/static/. "${DEPLOY_PATH}/.next/static/"
