@@ -15,6 +15,9 @@ pipeline {
         // Local deploy target (Next.js standalone output goes here,
         // run it with `node server.js` or pm2)
 
+
+
+
         DEPLOY_PATH = "/home/dejassha/Projects/jenkins-office/thirdvizion-web"
 
         // Frontend .env.production Jenkins credential (file type).
