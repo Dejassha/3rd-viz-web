@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: opacity 0.5s;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.5; }
+  }
+  .idle {
+    animation: pulse 2s infinite;
+  }
+  .box:hover {
+    animation: none;
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+<div class="box idle"></div>
+</body>
+</html>

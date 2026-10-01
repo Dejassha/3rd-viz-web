@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #0A0A0A;
+  --color-tertiary: #707070;
+  --color-white:#FCFCFC;
+  --color-accent-yellow: #FDB928;
+  --color-accent-orange: #F38540;
+  --color-accent-blue: #3EA9C1;
+  --color-accent-green: #5EBC58;
+  --color-accent-pink: #EE3A5C;
+  --color-icon-violet: #661BCB;
+  --color-icon-pink: #CB1A8C;
+  --color-icon-skyBlue: #1AA8CB;
+  --color-icon-red: #CB1A1A;
+  --color-icon-yellow: #FDCC26;
+  --color-icon-blue: #2600E5;
+  --color-icon-green: #05DF72;
+  --color-icon-iceBlue : #00C7E5;
+  --color-icon-orange : #E57A00;
+  --color-icon-lightPink : #E500CB;
+  --color-icon-darkBlue : #1316D2;
+  --font-anta: var(--font-anta), ui-sans-serif, sans-serif;
+  --font-outfit: var(--font-outfit), ui-sans-serif, sans-serif;
+  --font-inter-tight: var(--font-inter-tight), ui-sans-serif, sans-serif;
+  --font-poppins: var(--font-poppins), ui-sans-serif, sans-serif;
+}
+ html,
+body {
+  scroll-behavior: auto;
+}
+button {
+  cursor: pointer;
+
+}
+.heading {
+  @apply font-anta;
+  font-size: clamp(2rem, 3vw + 1rem, 3.75rem); /* 32px → 60px */
+  line-height: clamp(2.5rem, 3vw + 1.2rem, 5rem);
+}
+
+.subHeading {
+  @apply font-poppins;
+  font-size: clamp(1.25rem, 2vw + 0.8rem, 2.25rem); /* 20px → 36px */
+  line-height: clamp(1.8rem, 2vw + 1rem, 3rem);
+}
+
+.bodyText {
+  @apply font-outfit;
+  font-size: clamp(1.125rem, 1.5vw + 0.7rem, 1.5rem); /* 18px → 24px */
+  line-height: clamp(1.6rem, 1.5vw + 0.8rem, 2rem);
+}
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-[1600px];
+}
+
+@media (min-width: 640px) {
+  .container { max-width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .container { max-width: 100%; }
+}
+
+@media (min-width: 1024px) {
+  .container { max-width: 960px; }
+}
+
+@media (min-width: 1280px) {
+  .container { max-width: 1200px; }
+}
+
+@media (min-width: 1536px) {
+  .container { max-width: 1440px; }
+}
+
+@media (min-width: 1728px) {
+  .container { max-width: 1600px; }
+}
+/* Shared content band for header and hero so grids align */
+.layout-band {
+  @apply w-full max-w-[2800px] mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+
+
+/* square grid background – same origin for header and hero alignment */
+.grid-bg {
+  --grid-cell-size: 60px;
+  background-color: #050505;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: var(--grid-cell-size) var(--grid-cell-size);
+  background-position: 0 0;
+}
+@media (min-width: 640px) {
+  .grid-bg {
+    --grid-cell-size: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-bg {
+    --grid-cell-size: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-bg {
+    --grid-cell-size: 90px;
+  }
+}
+
+/* Hero uses same grid (inherits background-position: 0 0 and cell sizes) */
+.grid-bg.grid-bg-hero {
+  position: relative;
+}
+
+/* Hero icon grid – smooth pop-in */
+@keyframes hero-icon-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-icon-cell-inner {
+  animation: hero-icon-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* FAQ answer slide-in */
+@keyframes faq-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-faq-slide-in {
+  animation: faq-slide-in 0.25s ease-out forwards;
+}
+
+/* Review carousel content fade */
+@keyframes review-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-review-fade-in {
+  animation: review-fade-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ImagesFlow: slow particle drift (translation = backgroundSize for seamless loop) */
+@keyframes particle-drift-slow {
+  0% {
+    transform: translate(-10%, -5%) translate(0, 0);
+  }
+  100% {
+    transform: translate(-10%, -5%) translate(40px, 40px);
+  }
+}
+.animate-particle-drift-slow {
+  animation: particle-drift-slow 18s linear infinite;
+}
+
+@keyframes particle-drift-slow-reverse {
+  0% {
+    transform: translate(5%, -10%) translate(0, 0);
+  }
+  100% {
+    transform: translate(5%, -10%) translate(-56px, 56px);
+  }
+}
+.animate-particle-drift-slow-reverse {
+  animation: particle-drift-slow-reverse 22s linear infinite;
+}
+
+@keyframes contactRedGradient {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+.animate-contact-red-gradient {
+  animation: contactRedGradient 8s ease-in-out infinite;
+}

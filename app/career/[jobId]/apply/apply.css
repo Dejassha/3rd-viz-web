@@ -1,0 +1,158 @@
+/* Ant Design Dark Theme Overrides */
+
+.application-form .ant-form-item-label > label {
+  color: #8C909F !important;
+}
+
+.application-form .ant-input,
+.application-form .ant-select-selector,
+.application-form .ant-picker {
+  background-color: #0F1115 !important;
+  border-color: #32353C !important;
+  color: #FFFFFF !important;
+  border-radius: 8px !important;
+}
+
+.application-form .ant-input::placeholder,
+.application-form .ant-select-selection-placeholder,
+.application-form .ant-picker-input > input::placeholder {
+  color: #8C909F !important;
+}
+
+.application-form .ant-select-selection-item {
+  color: #FFFFFF !important;
+}
+
+.application-form .ant-select-arrow,
+.application-form .ant-select-arrow *,
+.application-form .ant-select-suffix,
+.application-form .ant-select-suffix *,
+.application-form .ant-picker-suffix,
+.application-form .ant-picker-suffix * {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+.application-form .ant-input:hover,
+.application-form .ant-select-selector:hover,
+.application-form .ant-picker:hover {
+  border-color: #4D8EFF !important;
+}
+
+.application-form .ant-input:focus,
+.application-form .ant-input-focused,
+.application-form .ant-select-focused .ant-select-selector,
+.application-form .ant-picker-focused {
+  border-color: #4D8EFF !important;
+  box-shadow: 0 0 0 2px rgba(77, 142, 255, 0.2) !important;
+}
+
+/* Global Select & DatePicker Dropdown Overrides (rendered in body portal) */
+.ant-select-dropdown {
+  background-color: #191B23 !important;
+  border: 1px solid #32353C !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+  padding: 4px !important;
+}
+
+.ant-select-item {
+  color: #FFFFFF !important;
+  border-radius: 6px !important;
+  margin: 2px 0 !important;
+  padding: 8px 12px !important;
+}
+
+.ant-select-item-option-content {
+  color: #FFFFFF !important;
+}
+
+.ant-select-item-option-active {
+  background-color: #262933 !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: #262933 !important;
+  color: #4D8EFF !important;
+  font-weight: 600 !important;
+}
+
+.ant-select-item-option-selected .ant-select-item-option-content {
+  color: #4D8EFF !important;
+}
+
+.ant-picker-dropdown {
+  background-color: #191B23 !important;
+}
+
+.ant-picker-cell-in-view {
+  color: #FFFFFF !important;
+}
+
+.ant-picker-header {
+  color: #FFFFFF !important;
+  border-color: #32353C !important;
+}
+
+.ant-picker-panel {
+  background-color: #191B23 !important;
+  border-color: #32353C !important;
+}
+
+/* Upload Drag Area */
+.application-form .ant-upload-drag {
+  background-color: #0F1115 !important;
+  border-color: #32353C !important;
+  border-radius: 12px !important;
+}
+
+.application-form .ant-upload-drag:hover {
+  border-color: #4D8EFF !important;
+}
+
+.application-form .ant-upload-hint,
+.ant-upload-drag .ant-upload-hint {
+  color: #FFFFFF !important;
+}
+
+.application-form .ant-upload-text,
+.ant-upload-drag .ant-upload-text {
+  color: #FFFFFF !important;
+}
+
+/* Radio Button */
+.application-form .ant-radio-wrapper {
+  color: #FFFFFF !important;
+}
+
+.application-form .ant-radio-checked .ant-radio-inner {
+  border-color: #4D8EFF !important;
+  background-color: #4D8EFF !important;
+}
+
+/* Required asterisk */
+.application-form .ant-form-item-required::before {
+  color: #FF4D4F !important;
+}
+
+/* Input Addon Before (Country Code Selector) */
+.application-form .ant-input-group-addon {
+  background-color: #191B23 !important;
+  border-color: #32353C !important;
+  color: #FFFFFF !important;
+  padding: 0 !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  overflow: hidden;
+}
+
+.application-form .ant-input-group-addon .ant-select {
+  width: 100%;
+}
+
+.application-form .ant-input-group-addon .ant-select-selector {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
